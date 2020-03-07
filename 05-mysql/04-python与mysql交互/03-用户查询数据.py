@@ -8,7 +8,7 @@ class JD(object):
     def show_all_items(self):
         """显示所有的商品"""
         # 创建Connection连接
-        conn = connect(host='192.168.211.131', port=3306, user='root', password='mysql', database='jing_dong',
+        conn = connect(host='localhost', port=3306, user='root', password='mysql', database='jing_dong',
                        charset='utf8')
         # 获得cursor对象
         cursor = conn.cursor()
@@ -22,7 +22,7 @@ class JD(object):
 
     def show_cates(self):
         # 创建Connection连接
-        conn = connect(host='192.168.211.131', port=3306, user='root', password='mysql', database='jing_dong',
+        conn = connect(host='localhost', port=3306, user='root', password='mysql', database='jing_dong',
                        charset='utf8')
         # 获得cursor对象
         cursor = conn.cursor()

@@ -2,7 +2,7 @@ from pymysql import *
 
 
 def main():
-    conn = connect(host='192.168.211.131', port=3306, user='root', password='mysql', database='jing_dong', charset='utf8')
+    conn = connect(host='localhost', port=3306, user='root', password='mysql', database='jing_dong', charset='utf8')
     cs1 = conn.cursor()
     # 执行select语句，并返回受影响的行数：查询一条数据
     count = cs1.execute('select id,name from goods where id>=4')

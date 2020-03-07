@@ -43,9 +43,12 @@ class JD(object):
 
     def get_info_by_name(self):
         find_name = input("请输出要查询的商品名称:")
-        sql = """select * from goods where name='%s'""" % find_name
-        print("--->%s<---" % sql)
-        self.execute_sql(sql)
+        # sql = """select * from goods where name='%s'""" % find_name
+        # print("--->%s<---" % sql)
+        # self.execute_sql(sql)
+        sql = "select * from goods where name = %s"
+        self.cursor.execute(sql, [find_name])
+        print(self.cursor.fetchall())
 
     @staticmethod
     def print_menu():
