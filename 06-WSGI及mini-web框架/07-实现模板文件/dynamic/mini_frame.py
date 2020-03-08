@@ -1,13 +1,13 @@
 def index():
     # 如果以web_server.py启动，则文件相对路径都是以web_server.py计算
     with open("./templates/index.html") as f:
-        content = f.read().encode('utf-8')
+        content = f.read()
     return content
 
 
 def center():
     with open("./templates/center.html") as f:
-        content = f.read().encode('utf-8')
+        content = f.read()
     return content
 
 
