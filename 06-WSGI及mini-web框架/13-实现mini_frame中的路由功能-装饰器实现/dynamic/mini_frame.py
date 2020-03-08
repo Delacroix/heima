@@ -1,6 +1,26 @@
 import re
 
+"""
+URL_FUNC_DICT = {
+    "/index.py": index,
+    "/center.py": center
+}
+"""
 
+URL_FUNC_DICT = dict()
+
+# 实现一个带参数的装饰器，将URL作为参数进行传递，实现路由
+def route(url):
+    def set_func(func):
+        # 等同于 URL_FUNC_DICT["/index.py"] = index
+        URL_FUNC_DICT[url] = func
+        def call_func(*args, **kwargs):
+            return func(*args, **kwargs)
+        return call_func
+    return set_func
+
+
+@route("/index.py")
 def index():
     # 如果以web_server.py启动，则文件相对路径都是以web_server.py计算
     with open("./templates/index.html") as f:
@@ -12,6 +32,7 @@ def index():
     return content
 
 
+@route("/center.py")
 def center():
     with open("./templates/center.html") as f:
         content = f.read()
