@@ -1,4 +1,5 @@
 def set_func(func):
+	print("---开始进行装饰---")
 	def call_func(a):
 		print("--这是权限验证1--")
 		print("--这是权限验证2--")
@@ -13,5 +14,5 @@ def test1(num):
 def test2(num):
 	print("---test2---%d" % num)
 
-test1(100)
-test2(200)
+# test1(100)
+# test2(200)
