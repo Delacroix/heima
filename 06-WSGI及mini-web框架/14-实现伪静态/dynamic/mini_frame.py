@@ -20,7 +20,7 @@ def route(url):
     return set_func
 
 
-@route("/index.py")
+@route("/index.html")
 def index():
     # 如果以web_server.py启动，则文件相对路径都是以web_server.py计算
     with open("./templates/index.html") as f:
@@ -32,7 +32,7 @@ def index():
     return content
 
 
-@route("/center.py")
+@route("/center.html")
 def center():
     with open("./templates/center.html") as f:
         content = f.read()
