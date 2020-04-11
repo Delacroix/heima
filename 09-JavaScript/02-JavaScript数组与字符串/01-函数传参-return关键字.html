@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        // 定义带参数的函数
+        function fnAdd(iNum01,iNum02){
+            var iRs = iNum01 + iNum02;
+            // alert(iRs);
+            alert(iNum01);
+            return iRs; // return在这一句返回数字后，结束了函数的运行，之后的代码不会执行
+            // return; //只写一个return，作用是在这一句直接结束函数运行，但不返回任何值
+            alert(iNum02); //不会执行
+        }
+
+        var iRs01 = fnAdd(10,5);
+
+        alert(iRs01); //函数如果没有返回值，得到的值就是undefined
+
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var oBtn = document.getElementById('btn');
+
+            function fnChange(sColor,sSize){
+                oDiv.style.color = sColor;
+                oDiv.style.fontSize = sSize;
+            }
+
+            //fnChange('red','30px');
+            oBtn.onclick = function(){
+                fnChange('red','30px');
+            };
+        }
+    </script>
 </head>
 <body>
-    
+    <input type="button" value="改变样式" id="btn">
+    <div id="div1">这是一个div</div>
 </body>
 </html>
