@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var iNum01 = 12;
+        var iNum02 = 24;
+        var sTr = 'a,b,c';
+        var aList = ['a','b','c'];
+        //alert可以将变量或对象通过弹框弹出，默认会阻止程序往下执行
+        alert(iNum01);
+        alert(iNum02);
+
+        //下列两种方式看不出结果的区别
+        alert(sTr);
+        alert(aList);
+
+        //console.log 可以显示变量和对象的类型，不会阻止程序往下执行
+        //通过浏览器Console可以查看，并且可以直接在Console窗口调试js
+        console.log(sTr);
+        console.log(aList);
+
+        //操作标题栏显示内容
+        document.title = 'iNum02的值是：' + iNum02;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
