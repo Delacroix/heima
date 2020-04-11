@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菜单</title>
+    <style type="text/css">
+        .menu{
+            width: 694px;
+            height: 50px;
+            background-color: cyan;
+            /* 去掉小圆点 */
+            list-style: none;
+            margin: 50px auto;
+            padding: 0px;
+        }
+        .menu li{
+            width: 98px;
+            height: 48px;
+            border: 1px solid gold;
+            background-color: white;
+            /* display: inline-block; */
+            float: left;
+            margin-left: -1px;
+        }
+        .menu li a{
+            display: block;
+            width: 98px;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: "Microsoft Yahei";
+        }
+        .menu li a:hover{
+            background-color: gold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- ul.menu>(li>a{公司简介})*7 -->
+    <ul class="menu">
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+        <li><a href="#">公司简介</a></li>
+    </ul>
+    <!-- div>a*7 -->
+    <div>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+    </div>
+</body>
+</html>

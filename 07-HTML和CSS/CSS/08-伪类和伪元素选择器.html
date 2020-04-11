@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .link{
+            font-size: 30px;
+            text-decoration: none;
+            color:green;
+        }
+        /* 伪类 */
+        .link:hover{
+            color: gold;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .box01,.box02{
+            font-size: 20px;
+        }
+        /* 伪元素 */
+        .box01:before{
+            content: ". ";
+            color: red;
+        }
+
+        .box02:after{
+            content: "。 ";
+            color: red;
+        }        
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com" class="link">百度</a>
+    <div class="box01">第一个div</div>
+    <div class="box02">第二个div</div>
+</body>
+</html>
