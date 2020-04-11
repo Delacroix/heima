@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var iNum01 = 12;
+        var sNum01 = '12';
+        var sNum02 = '12.45';
+
+        //"+"符号两边如果都是数字，就做加法运算；
+        //如果有一边是字符串，就做字符串拼接
+        alert(iNum01+10); //22
+        alert(sNum01+10); //1210
+
+        //parseInt可以将数字的字符串转化为整数，默认会去掉小数位
+        alert(parseInt(sNum01)+10); //22
+        alert(parseInt(sNum02)+10); //22
+
+        alert(parseFloat(sNum02)+10);//22.45
+
+        //将字符串分割成数组
+        var sTr = '2020-4-11';
+        
+        var aList = sTr.split('-');
+        var aList2 = sTr.split('');
+        alert(aList);
+        alert(aList2);
+
+        //获取某小段字符串在大段字符串里面的索引值
+        var sTr2 = 'abcdefgh123456';
+        var iPos = sTr2.indexOf('e');
+        var iPos2 = sTr2.indexOf('i');
+        alert(iPos); //4
+        alert(iPos2); //-1 即不存在
+
+        //截取字符串
+        var sTr3 = sTr2.substring(3,6);
+        var sTr4 = sTr2.substring(3);
+        alert(sTr3); //def
+        alert(sTr4); //defgh123456
+
+        //字符串反转
+        var sTr5 = sTr2.split('').reverse().join('');
+        alert(sTr5);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

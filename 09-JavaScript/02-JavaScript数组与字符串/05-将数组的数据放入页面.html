@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list{
+            width: 300px;
+            margin: 50px auto;
+            list-style: none;
+            padding: 0px;
+        }
+        .list li{
+            line-height: 50px;
+            border-bottom: 1px dotted black;
+            text-indent: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var aList = ['红海行动','战狼2','前任3','后来的我们','喜羊羊与灰太狼','小猪佩奇'];
+            var oUl = document.getElementById('list');
+
+            var sTr = ''
+
+            for(var i=0;i<aList.length;i++){
+                sTr += '<li>' + aList[i] + '</li>';
+            }
+
+            //alert(sTr);
+            oUl.innerHTML = sTr;
+        }
+    </script>
+</head>
+<body>
+    <ul class="list" id="list">
+        <!-- <li>电影名称排行</li>
+        <li>电影名称排行</li>
+        <li>电影名称排行</li>
+        <li>电影名称排行</li>
+        <li>电影名称排行</li>
+        <li>电影名称排行</li> -->
+    </ul>
+</body>
+</html>
