@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main02.css">
+    <script type="text/javascript">      
+    window.onload = function(){
+        var oInput01 = document.getElementById('input01'),
+        oInput02 = document.getElementById('input02'),
+        oInput03 = document.getElementById('input03'),
+        oInput04 = document.getElementById('input04'),
+        oInput05 = document.getElementById('input05'),
+        oInput06 = document.getElementById('input06'),
+        oInput07 = document.getElementById('input07'),
+        oBtn = document.getElementById('setcard'),
+        oCard = document.getElementById('card_wrap');
+
+        oBtn.onclick = function(){
+            // 获取input输入框的value属性值
+            var sVal01 = oInput01.value,
+            sVal02 = oInput02.value,
+            sVal03 = oInput03.value,
+            sVal04 = oInput04.value,
+            sVal05 = oInput05.value,
+            sVal06 = oInput06.value,
+            sVal07 = oInput07.value;
+            
+            // 判断输入框是否为空
+            if(sVal01==''||sVal02==''||sVal03==''||sVal04==''||sVal05==''||sVal06==''||sVal07==''){
+                alert('输入框不能为空');
+                return; //在这一句结束函数的运行
+            }
+
+            // 拼接名片的结构
+            var sStr = '<div class="p01">'+ sVal01 +'<em>'+ sVal02 +'</em></div>'
+                +'<div class="p02">'
+                    +'<p class="company">'+ sVal03 +'</p>'
+                    +'<p>手机：'+ sVal04 +'</p>'
+                    +'<p>email：'+ sVal05 +'</p>'
+                    +'<p>地址：'+ sVal06 +'</p>'
+                +'</div>';
+
+            oCard.innerHTML = sStr;
+
+            // 改变名片风格
+            if(sVal07==0){
+                oCard.className = 'idcard01'
+            }
+            else if(sVal07==1){
+                oCard.className = 'idcard02'
+            }
+            else{
+                oCard.className = 'idcard03'
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="set_con">
+        <div class="left_set">
+            <label>姓名：</label>
+            <!-- abc=xx -->
+            <input type="text" id="input01" value="xx" name="abc">
+            <label>职位：</label>
+            <input type="text" id="input02">
+            <label>公司名称：</label>
+            <input type="text" id="input03">
+            <label>手机：</label>
+            <input type="text" id="input04">
+            <label>email：</label>
+            <input type="text" id="input05">
+            <label>地址：</label>
+            <input type="text" id="input06">
+            <label>风格：</label>
+            <select  id="input07">
+                <option value="0">风格一</option>
+                <option value="1">风格二</option>
+                <option value="2">风格三</option>
+            </select>
+            <input type="button" value="设 置" class="setbtn" id="setcard">
+        </div>
+        <div class="right_show">
+            <div class="idcard01" id="card_wrap">
+                <div class="p01">张大山<em>产品经理</em></div>
+                <div class="p02">                    
+                    <p class="company">银河科技信息技术有限公司</p>
+                    <p>手机：1808888888</p>
+                    <p>email：dasan@126.com</p>
+                    <p>地址：中关村银河大厦B座2603</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

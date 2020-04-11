@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var iNum01 = 12;
+        var sNum01 = '12';
+
+        /*
+        if(iNum01==12){
+            alert('相等')
+        }
+        else{
+            alert('不相等')
+        }
+        */
+
+        // "==" 默认会将符号两边的变量转换成同一类型，这个叫做隐式转换
+        /*
+        if(sNum01==12){
+            alert('相等')
+        }
+        else{
+            alert('不相等')
+        }
+        */
+
+        // "==="不会转换符号两边的变量类型
+        if(sNum01===12){
+        alert('相等')
+        }
+        else{
+        alert('不相等')
+        }
+        
+        if(5>3 && 10>11){
+            alert('都大于')
+        }
+        else{
+            alert('至少有一个不大于')
+        }
+
+        if(5>3 || 10>11){
+        alert('至少有一个大于')
+        }
+        else{
+        alert('都不大于')
+        }
+
+        if(!10>5){
+            alert('10大于5')
+        }
+        else{
+            alert('10不大于5')
+        }
+
+        var iNow = 3;
+        if(iNow==1){
+            alert('iNow的值是1')
+        }
+        else if(iNow==2){
+            alert('iNow的值是2')
+        }
+        else{
+            alert('iNow的值不是1也不是2')
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

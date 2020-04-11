@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn01')
+            var oDiv = document.getElementById('div01')
+
+            /*
+            function fnChange(){
+                oDiv.style.width = '300px';
+                oDiv.style.height = '300px';
+                oDiv.style.background = 'gold';
+            }
+            // 不能写为 fnChange()；  会导致直接返回结果
+            // 此处是需要将onclick事件属性与fnChange函数的引用相关联
+            oBtn.onclick = fnChange;
+            */
+            
+            // 上面的写法可以改写成匿名函数:
+            // 1.将函数的定义过程赋值给事件属性
+            // 2.通过这种方式定义和关联的叫匿名函数
+            oBtn.onclick = function(){
+                oDiv.style.width = '300px';
+                oDiv.style.height = '300px';
+                oDiv.style.background = 'gold';
+            };
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="改变样式" id="btn01">
+    <div id="div01">这是一个div</div>
+</body>
+</html>
