@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //定义全局变量
+        var iNum01 = 12;
+        
+        function fnMyalert(){
+            //在函数内部定义局部变量，需要加 var
+            var iNum02 = 24;
+            
+            //如果定义变量时不加 var,则定义的是全局变量
+            iNum03 = 36; 
+
+            //使用全局变量
+            alert('函数内部调用的全局变量iNum01：' + iNum01);
+            alert('函数内部调用的局部变量iNum02：' + iNum02);
+
+            iNum01 = 13;
+            alert('函数内部调用的全局变量iNum01：' + iNum01);
+        }
+
+        fnMyalert();
+
+        alert('函数内部调用的全局变量iNum01：' + iNum01); //全局变量已经在函数内被修改，所以值为13
+        alert('函数内部调用的全局变量iNum03：' + iNum03);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
