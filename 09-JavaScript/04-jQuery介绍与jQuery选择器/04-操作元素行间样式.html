@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $div = $('#div1');
+
+            //读取样式属性
+            var sSize = $div.css('fontSize');
+            alert(sSize);
+
+            //原生js方法获取文字大小;需要在标签中声明这个样式属性才能获取到
+            var sSize2 = document.getElementById('div1').style.fontSize;
+            //alert(sSize2);
+
+            //写样式属性，也叫做设置或者修改样式属性
+            $div.css('color','red');
+            $div.css({'fontSize':30,'background':'gold'});
+
+            //尝试获取多个元素的属性值，得到的是第一个元素的属性值
+            var $div2 = $('div');
+            var sSize3 = $div2.css('fontSize');
+
+            alert(sSize3);
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">这是一个div</div>
+    <div>这是第二个div</div>
+</body>
+</html>
