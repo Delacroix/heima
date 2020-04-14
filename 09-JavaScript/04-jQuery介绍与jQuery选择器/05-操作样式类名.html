@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big{
+            font-size: 30px;
+        }
+
+        .red{
+            color: red;
+        }
+
+        .noline{
+            text-decoration: none;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $a = $('#link01');
+
+            //addClass不会覆盖样式，只会在原来基础上增加
+            $a.addClass('big');
+            $a.addClass('red');
+            $a.addClass('noline');
+
+            //移出多个样式
+            $a.removeClass('big noline');
+        })
+    </script>
+
+</head>
+<body>
+    <a href="#" id="link01">这是一个链接</a>
+</body>
+</html>

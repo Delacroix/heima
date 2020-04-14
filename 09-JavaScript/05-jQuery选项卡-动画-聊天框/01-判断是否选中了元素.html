@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $div = $('#div1');
+            var $div2 = $('#div2');
+            var $li = $('.list li')
+
+            //判断是否选中了元素，用length属性
+            var iLen = $div.length;
+            //选择器不存在时，返回的是一个空的jqurey对象，它的length属性值是：0
+            var iLen2 = $div2.length;
+            var iLen3 = $li.length;
+
+            alert(iLen); //弹出1
+            alert(iLen2); //弹出0
+            alert(iLen3); //弹出8
+
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">这是一个div</div>
+    <!-- ul.list>li*8 -->
+    <ul class="list">
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+    </ul>
+</body>
+</html>

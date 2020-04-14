@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $a = $('#link01');
+            var $div = $('#div01');
+
+            //读取属性值
+            var sId = $a.prop('id');
+
+            //写入或者设置属性值
+            $a.prop({'href':'https://www.baidu.com','title':'这是百度的链接','class':'big'});
+
+            //操作元素包裹的内容
+            //读取内容
+            var sTr = $div.html();
+
+            //写入/设置/修改元素包裹的内容
+            $div.html('改变的文字');
+            $div.html('<ul><li>列表文字</li><li>列表文字</li></ul>');
+        })
+    </script>
+</head>
+<body>
+    <a href="#" id="link01">这是一个链接</a>
+    <div id="div01">这是一个div</div>
+</body>
+</html>

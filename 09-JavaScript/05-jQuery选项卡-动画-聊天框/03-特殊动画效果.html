@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* w200 */
+            width: 200px;
+            /* h200 */
+            height: 200px;
+            background: gold;
+            display: none;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $btn = $('#btn');
+            var $div = $('.box');
+
+            $btn.click(function(){
+                //制作显示和隐藏的动画
+                //$div.hide();
+                //$div.show();
+                //$div.toggle(); //切换
+
+                //制作淡入和淡出动画
+                //$div.fadeIn();
+                //$div.fadeOut();
+                //$div.fadeToggle();
+
+                //制作向下展开和向上卷起的动画
+                //$div.slideUp();
+                //$div.slideDown();
+                $div.stop().slideToggle(); //stop() 用于保留最后一次点击的动画，避免暴力点击后的持续动画效果
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="动画" id="btn">
+    <div class="box"></div>
+</body>
+</html>

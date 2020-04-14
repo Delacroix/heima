@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box, .box2{
+            /* w200 */
+            width: 200px;
+            /* h200 */
+            height: 200px;
+            background: gold;
+        }
+        .box{
+            margin-top: 20px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $btn = $('#btn');
+            var $div = $('.box');
+            var $div2 = $('.box2');
+
+            $btn.click(function(){
+                /*
+                    动画参数：
+                    第一个参数：要做动画的样式属性，写成字典的形式
+                    第二个参数：动画持续的时间，默认单位是400ms，定义时不写单位
+                    第三个参数：动画曲线：默认是 swing-缓冲运动；还有 linear-匀速运动；其他运动需要插件支持
+                    第四个参数：回调函数
+                */
+                $div.animate({'width':1000},1000,'swing',function(){
+                    $div2.animate({'width':1000},1000,'linear');
+                });
+                //$div2.animate({'width':1000},1000,'linear');
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="动画" id="btn">
+    <div class="box">swing</div>
+    <div class="box2">linear</div>
+</body>
+</html>
