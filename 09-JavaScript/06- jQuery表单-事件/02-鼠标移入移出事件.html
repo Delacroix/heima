@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: gold;
+            margin: 100px auto;
+        }
+        .box02{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $div = $('.box');
+            
+            //mouseover和mouseout移入子元素也会连带触发父级元素,以事件冒泡的原理影响父级元素（设计如此）
+            /*
+            $div.mouseover(function(){
+                $(this).animate({'margin-top':150});
+            })
+
+            $div.mouseout(function(){
+                $(this).animate({'margin-top':100});
+            })
+            */
+
+            //mouseenter和mouseleave移入子元素不会触发父级元素
+            /*
+            $div.mouseenter(function(){
+                $(this).animate({'margin-top':150});
+            })
+
+            $div.mouseleave(function(){
+                $(this).animate({'margin-top':100});
+            })
+            */
+            
+            //上面两句可以用hover事件来合并成一句：
+            $div.hover(function(){
+                $(this).animate({'margin-top':150});
+            },function(){
+                $(this).animate({'margin-top':100});
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="box02"></div>
+    </div>
+</body>
+</html>

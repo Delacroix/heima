@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $input = $('#input01');
+            //一般不在focus事件上绑定函数
+            /*
+            $input.focus(function(){
+                alert('获得焦点');
+            })
+            */
+            //focus一般用在让input输入框默认获取焦点
+            $input.focus();
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id="input01">
+</body>
+</html>
