@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{ margin: 0; padding: 0; list-style: none;}
+    .tab{
+        width: 500px;
+        height: 300px;
+        margin: 100px auto;
+    }
+    ul{
+        height: 50px;
+        /* overflow: hidden; /清除浮动的影响/ */
+    }
+    li{
+        width: 100px;
+        height: 50px;
+        background: #ccc;
+        text-align: center;
+        line-height: 50px;
+        float: left;
+        margin-right: 5px;
+    }
+    .con{
+        height: 250px;
+        background: pink;
+    }
+    .con div{
+        height: 250px;
+        display: none;
+    }
+    .con .current{
+        /* 注意权重问题 */
+        /* 显示 */
+        display: block;
+    }
+    .active{
+        background: pink;
+        color: red;
+    }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $btn = $('.tab li');
+            var $div = $('.con div');
+
+            $btn.click(function(){
+                $(this).addClass('active').siblings().removeClass('active');
+                
+                $div.eq($(this).index()).addClass('current').siblings().removeClass('current');
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="tab">
+        <!-- 第一行：菜单：将来绑定事件  div>input -->
+        <ul>
+            <li class="active">公告</li>
+            <li>论坛</li>
+            <li>规则</li>
+        </ul>
+        <!-- 第二行：内容 -->
+        <div class="con">
+            <div class="current">公告内容</div>
+            <div>论坛内容</div>
+            <div>规则内容</div>
+        </div>
+    </div>
+</body>
+</html>
