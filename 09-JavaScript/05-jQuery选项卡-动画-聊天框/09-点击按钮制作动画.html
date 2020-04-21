@@ -22,6 +22,7 @@
                 //参数：属性-持续时间-回调函数
                 $div.animate({'width':1000},1000,function(){
                     $div.animate({'margin-top':300},1000,function(){
+                        //回到初始状态
                         $div.animate({'width':200,'margin-top':0},1000);
                     });
                 });
