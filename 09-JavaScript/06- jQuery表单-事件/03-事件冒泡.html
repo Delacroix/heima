@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grandfather{
+            width: 300px;
+            height: 300px;
+            background: orange;
+            position: relative;
+        }
+        .father{
+            width: 200px;
+            height: 200px;
+            background: gold;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0px;
+            top: 400px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            //var $son = $('.son')
+
+            //阻止事件冒泡和默认行为的简便写法,相当于下列两个方法合并
+            //stopPropagation
+            //preventDefault
+
+            //即使注释掉，即使不写.son的click函数，点击.son元素时也会发生冒泡后的事件(即father)
+            /*
+            $('.son').click(function(){
+                alert(1);
+                return false;
+            });
+            */
+
+            //阻止事件冒泡的完整写法：
+            //1、传递event对象
+            //2、调用stopPropagation阻止
+            $('.father').click(function(event){
+                alert(2);
+                event.stopPropagation();
+            });
+
+            
+            $('.grandfather').click(function(){
+                alert(3);
+            });
+
+            $(document).click(function(){
+                alert(4);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+</body>
+</html>
