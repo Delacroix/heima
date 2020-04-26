@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .pop_con{
+            background-color:aquamarine;
+            position: relative;
+            position: fixed;
+            margin: 100px;
+        }
+
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#btn01').click(function(){
+                $('.pop_main').show();
+                //防止事件冒泡
+                return false;
+            })
+
+            $('#shutoff').click(function(){
+                $('.pop_main').hide();
+            })
+
+            $(document).click(function(){
+                //setTimeout(function(){
+                    $('.pop_main').hide();
+                //},2000)
+            })
+
+            $('.pop_con').click(function(){
+                return false;
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="弹出弹框" id="btn01">
+    <div class="pop_main" id="pop">
+        <div class="pop_con">
+            <div class="pop_title">
+                <h3>系统提示</h3>
+                <a href="#" id="shutoff">x</a>
+            </div>
+            <div class="pop_detail">
+                <p class="pop_next">亲！请关注近期的优惠活动！</p>
+            </div>
+            <div class="pop_footer">
+
+            </div>
+            <div class="mask"></div>
+        </div>
+    </div>
+</body>
+</html>

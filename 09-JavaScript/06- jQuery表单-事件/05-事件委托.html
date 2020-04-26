@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $li = $('.list li');
+            var $ul = $('.list');
+            //alert($li.length)
+
+            
+            /*
+            $li.click(function(){
+                $(this).css({'background':'red'});
+            })
+            */
+            //上面的写法性能不高，通过循环绑定了8次
+            //可以写成事件委托的形式(只绑定一次)：
+            $ul.delegate('li','click',function(){
+                //这个$(this)指的是事件冒泡的子集
+                $(this).css({'background':'red'});
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+        <li>列表文字</li>
+    </ul>
+</body>
+</html>
