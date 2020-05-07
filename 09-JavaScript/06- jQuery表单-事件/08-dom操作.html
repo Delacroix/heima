@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            var $div = $('#div1');
+            var $h01 = $('#h01');
+            var $h02 = $('#h02');
+            var $div2 = $('#div2');
+
+            //当前元素里面的后面要放另外一个元素
+            //$div.append($h01);
+
+            //当前元素要放到另外一个元素里面的后面(实际和上面的方法相比 就是源和目标不同，或者说主语宾语对调)
+            //$h01.appendTo($div);
+
+            //当前元素里面的前面要放另外一个元素
+            //$div.prepend($h02);
+
+            //当前元素要放到另外一个元素的里面的前面
+            $h02.prependTo($div);
+
+            //当前元素的外面的后面要放另外一个元素
+            //$div.after($div2);
+
+            //当前元素要放到另外一个元素的外面的后面
+            $div2.insertAfter($div);
+        })
+    </script>
+</head>
+<body>
+    <h3 id="h01">这是div1外面的h3标签</h3>
+    <h1 id="h02">这是div1外面的h1标签</h1>
+    <div id="div2">这是div1上面的div</div>
+    <div id="div1">
+        <h2>这是div1里面的h2标签</h2>
+        <p>这是div1里面的p标签</p>
+    </div>
+</body>
+</html>
