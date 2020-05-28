@@ -51,6 +51,8 @@
 
             $btn.click(function(){
                 var sVal = $txt.val();
+                // 用于清空内存中的内容
+                $txt.val(''); 
 
                 if(sVal==''){
                     alert('请输入计划的内容！');
