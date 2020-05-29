@@ -61,7 +61,47 @@
 
                 var $li = $('<li><span>'+ sVal +'</span><a href="javascript:;" class="up">↑</a><a href="javascript:;" class="down">↓</a><a href="javascript:;" class="del">删除</a></li>');
 
+                /*
+                var $del = $li.find('.del');
+                $del.click(function(){
+                    $(this).parent().remove();
+                })
+                */
+
                 $ul.append($li);
+            })
+
+            //下面的写法性能不高，并让程序变复杂
+            /*
+            var $del = $('.del');
+            $del.click(function(){
+                $(this).parent().remove();
+            })
+            */
+
+            //通过事件委托方式来处理每个 a 标签的事件
+            $ul.delegate('a','click',function(){
+                var sHandler = $(this).prop('class');
+                //alert(sHandler);
+                if(sHandler=='del'){
+                    $(this).parent().remove();
+                }
+
+                if(sHandler=='up'){
+                    if($(this).parent().prev().length==0){
+                        alert('到顶了！');
+                        return;
+                    }
+                    $(this).parent().insertBefore($(this).parent().prev());
+                }
+
+                if (sHandler == 'down') {
+                    if ($(this).parent().next().length == 0) {
+                        alert('到底了！');
+                        return;
+                    }
+                    $(this).parent().insertAfter($(this).parent().next());
+                }
             })
         })
     </script>
